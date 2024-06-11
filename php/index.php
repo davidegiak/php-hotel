@@ -52,11 +52,19 @@ $hotels = [
 </head>
 
 <body>
-    <h2>Esempio array</h2>
+    <h2>Stampa disordinata</h2>
 
-    <pre>
-    <?= var_dump($hotels); ?>
-</pre>
+    <?php
+        foreach ($hotels as $hotel) {
+            echo "<ul>";
+            echo "<li>" . "<h4>" . $hotel['name'] . "</h4>" . "</li>";  
+            echo "<li>" . $hotel['description'] . "</li>";
+            echo "<li>" . $hotel['parking'] . "</li>";
+            echo "<li>" . $hotel['vote'] . "</li>";
+            echo "<li>" . $hotel['distance_to_center'] . "</li>";
+            echo "</ul>";
+        }
+        ?>
 </body>
 
 </html>
