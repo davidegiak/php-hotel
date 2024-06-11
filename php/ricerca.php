@@ -14,6 +14,7 @@
         <form action="hotels.php" method="get">
             <h3 class="h3">Scrivi assente, presente o tutti</h3>
             <input type="text" name="park" placeholder="Scrivi qui assente, presente o tutti">
+            <input type="text" name="voto" placeholder="Scrivi qui assente, presente o tutti">
             <button type="submit">Invia</button>
         </form>
     </div>

@@ -42,6 +42,7 @@ $hotels = [
 ];
 
 $parking = $_GET["park"];
+$voto = $_GET["voto"];
 
 ?>
 
@@ -61,17 +62,19 @@ $parking = $_GET["park"];
         <?php
         if ($parking == 'tutti') {
             foreach ($hotels as $hotel) {
-                echo "<ul>";
-                echo "<li>" . "<h3>" . $hotel['name'] . "</h3>" . "</li>";
-                echo "<li>" . 'descrizione:' . $hotel['description'] . "</li>";
-                echo "<li>" . 'N° Parcheggi:' . $hotel['parking'] . "</li>";
-                echo "<li>" . 'Voto:' . $hotel['vote'] . "</li>";
-                echo "<li>" . 'Distanza dal centro:' . $hotel['distance_to_center'] . "</li>";
-                echo "</ul>";
+                if ($hotel['vote'] >= $voto) {
+                    echo "<ul>";
+                    echo "<li>" . "<h3>" . $hotel['name'] . "</h3>" . "</li>";
+                    echo "<li>" . 'descrizione:' . $hotel['description'] . "</li>";
+                    echo "<li>" . 'N° Parcheggi:' . $hotel['parking'] . "</li>";
+                    echo "<li>" . 'Voto:' . $hotel['vote'] . "</li>";
+                    echo "<li>" . 'Distanza dal centro:' . $hotel['distance_to_center'] . "</li>";
+                    echo "</ul>";
+                }
             }
         } elseif ($parking == 'assente') {
             foreach ($hotels as $hotel) {
-                if ($hotel['parking'] <= 0) {
+                if ($hotel['parking'] <= 0 && $hotel['vote'] >= $voto) {
                     echo "<ul>";
                     echo "<li>" . "<h3>" . $hotel['name'] . "</h3>" . "</li>";
                     echo "<li>" . 'descrizione:' . $hotel['description'] . "</li>";
@@ -83,7 +86,7 @@ $parking = $_GET["park"];
             }
         } elseif ($parking == 'presente') {
             foreach ($hotels as $hotel) {
-                if ($hotel['parking'] > 0) {
+                if ($hotel['parking'] > 0 && $hotel['vote'] >= $voto) {
                     echo "<ul>";
                     echo "<li>" . "<h3>" . $hotel['name'] . "</h3>" . "</li>";
                     echo "<li>" . 'descrizione:' . $hotel['description'] . "</li>";
