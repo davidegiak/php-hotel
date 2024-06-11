@@ -54,6 +54,10 @@ $hotels = [
 <body>
     <h2>Stampa disordinata</h2>
 
+    <div class="myContainer">
+
+    </div>
+
     <?php
         foreach ($hotels as $hotel) {
             echo "<ul>";
@@ -64,7 +68,7 @@ $hotels = [
             echo "<li>" . $hotel['distance_to_center'] . "</li>";
             echo "</ul>";
         }
-        ?>
+    ?>
 </body>
 
 </html>
