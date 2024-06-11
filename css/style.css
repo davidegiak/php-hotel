@@ -27,3 +27,12 @@ h2{
     text-align: center;
 
 }
+
+.h3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+form {
+    text-align: center;
+}
