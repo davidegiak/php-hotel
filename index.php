@@ -1,4 +1,5 @@
 <?php
+$parking = $_GET['parking'];
 
 $hotels = [
 
@@ -37,8 +38,10 @@ $hotels = [
         'vote' => 2,
         'distance_to_center' => 50
     ],
+ 
 
 ];
+
 
 ?>
 
@@ -49,26 +52,28 @@ $hotels = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-hotel</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <h2>Stampa disordinata</h2>
-
+    <p>
+    <?php echo $parking; ?>
+    </p>
+    <!-- <h2>Migliori hotels del mondooo</h2>
     <div class="myContainer">
+        <?php
+            foreach ($hotels as $hotel) {
+                echo "<ul>";
+                echo "<li>" . "<h3>" . $hotel['name'] . "</h3>" . "</li>";
+                echo "<li>" . $hotel['description'] . "</li>";
+                echo "<li>" . $hotel['parking'] . "</li>";
+                echo "<li>" . $hotel['vote'] . "</li>";
+                echo "<li>" . $hotel['distance_to_center'] . "</li>";
+                echo "</ul>";
+            }
+        ?>
+    </div> -->
 
-    </div>
-
-    <?php
-        foreach ($hotels as $hotel) {
-            echo "<ul>";
-            echo "<li>" . "<h4>" . $hotel['name'] . "</h4>" . "</li>";  
-            echo "<li>" . $hotel['description'] . "</li>";
-            echo "<li>" . $hotel['parking'] . "</li>";
-            echo "<li>" . $hotel['vote'] . "</li>";
-            echo "<li>" . $hotel['distance_to_center'] . "</li>";
-            echo "</ul>";
-        }
-    ?>
 </body>
 
 </html>
